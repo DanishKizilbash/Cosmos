@@ -5,11 +5,12 @@ namespace Cosmos
 {
 
 	public class Game
-	{		
-		
+	{
+        Profiler profiler = new Profiler("Main Game");
 
 		public Game ()
 		{
+            profiler.Start();
 		}
 		public void Start ()
 		{
@@ -17,6 +18,12 @@ namespace Cosmos
 
 		public void Update ()
 		{
+            profiler.Report();
+            profiler.Start();
+           
 		}
+        public void LateUpdate() {
+            Debugger.Expose();
+        }
 	}
 }

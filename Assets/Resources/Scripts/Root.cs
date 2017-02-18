@@ -7,7 +7,7 @@ namespace Cosmos
 	public class Root : MonoBehaviour
 	{
 		void Start ()
-		{			
+		{	
 			Application.targetFrameRate = 60;
 			GameManager.NewGame (0, new Vector3 (1, 0, 1));
 		}

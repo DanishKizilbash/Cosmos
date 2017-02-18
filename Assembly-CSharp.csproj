@@ -5,7 +5,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{C221C64E-59D1-4090-09F6-35643E16DC2E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -39,127 +40,48 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>J:/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>J:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Resources\Scripts\AI\Brain\Brain.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Brain\BrainShip.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Brain\Intent\Intent.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Brain\Intent\IntentIdle.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Brain\Intent\IntentMoveTo.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Brain\Intent\IntentWander.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Brain\Modifier\Modifier.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Brain\Modifier\ModifierGetNearest.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Brain\Modifier\ModifierGetRandom.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Brain\State.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Brain\Task\Task.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Brain\Task\TaskGetCurrentJobPosition.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Brain\Task\TaskManueverToPosition.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Brain\Task\TaskSetTargetPosition.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Brain\Task\TaskWait.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Brain\Task\TaskWorkAtPosition.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Jobs\Job.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Jobs\JobManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Jobs\JobState.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Jobs\Skill.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Jobs\SkillsTemplate.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Jobs\Worker.cs" />
-     <Compile Include="Assets\Resources\Scripts\AI\Pathfinding\PathFinder.cs" />
-     <Compile Include="Assets\Resources\Scripts\Colony\Colony.cs" />
-     <Compile Include="Assets\Resources\Scripts\Colony\ConstructionJob.cs" />
-     <Compile Include="Assets\Resources\Scripts\Databases\Database.cs" />
-     <Compile Include="Assets\Resources\Scripts\Databases\Finder.cs" />
-     <Compile Include="Assets\Resources\Scripts\Defs\Def.cs" />
-     <Compile Include="Assets\Resources\Scripts\Defs\DefaultDef.cs" />
-     <Compile Include="Assets\Resources\Scripts\Defs\JobDef.cs" />
-     <Compile Include="Assets\Resources\Scripts\Defs\LimbDef.cs" />
-     <Compile Include="Assets\Resources\Scripts\Defs\ThingDef.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entity\CelestialBody\CelestialBodies\PlanetBody.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entity\CelestialBody\CelestialBodies\StarBody.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entity\CelestialBody\CelestialBody.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entity\CelestialBody\OrbitEntity.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entity\CelestialBody\PlanetarySystem.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entity\Entity.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entity\Things\Actor\Actor.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entity\Things\Actor\Anatomy\Anatomy.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entity\Things\Actor\Anatomy\Limb.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entity\Things\Actor\Anatomy\ThrusterLimb.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entity\Things\Actor\Ship\ActorShip.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entity\Things\Actor\Ship\Fleet.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entity\Things\Thing.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entity\Things\Utility Classes\Drop.cs" />
-     <Compile Include="Assets\Resources\Scripts\Game.cs" />
-     <Compile Include="Assets\Resources\Scripts\Graphics\Graphic.cs" />
-     <Compile Include="Assets\Resources\Scripts\Graphics\Mesh\MeshDisplay.cs" />
-     <Compile Include="Assets\Resources\Scripts\Graphics\Texture\SpriteAtlas.cs" />
-     <Compile Include="Assets\Resources\Scripts\Loading\Loader.cs" />
-     <Compile Include="Assets\Resources\Scripts\Managers\DepthManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\Managers\DrawManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\Managers\EntityManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\Managers\GalaxyManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\Managers\GameManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\Managers\InputManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\Managers\MeshManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\Managers\PhysicsManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\Managers\ResourceManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\Managers\TextureManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\Managers\TickManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\Managers\UIManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\Math\Coord.cs" />
-     <Compile Include="Assets\Resources\Scripts\Math\LoadedDie.cs" />
-     <Compile Include="Assets\Resources\Scripts\Math\MathI.cs" />
-     <Compile Include="Assets\Resources\Scripts\Math\Measurement\Unit.cs" />
-     <Compile Include="Assets\Resources\Scripts\Math\Measurement\UnitConversions.cs" />
-     <Compile Include="Assets\Resources\Scripts\Math\MinMax.cs" />
-     <Compile Include="Assets\Resources\Scripts\Physics\Force.cs" />
-     <Compile Include="Assets\Resources\Scripts\Physics\PhysicsObject.cs" />
-     <Compile Include="Assets\Resources\Scripts\Resources\Resource.cs" />
-     <Compile Include="Assets\Resources\Scripts\Resources\Stockpile.cs" />
-     <Compile Include="Assets\Resources\Scripts\Root.cs" />
-     <Compile Include="Assets\Resources\Scripts\UI\Exposable.cs" />
-     <Compile Include="Assets\Resources\Scripts\UI\Panels\Panel.cs" />
-     <Compile Include="Assets\Resources\Scripts\UI\Panels\Panels\CelestialBody\CelestialBodyPanel.cs" />
-     <Compile Include="Assets\Resources\Scripts\UI\Panels\Panels\Colony\ColonyPanel.cs" />
-     <Compile Include="Assets\Resources\Scripts\UI\Panels\Panels\EntityPanel.cs" />
-     <Compile Include="Assets\Resources\Scripts\UI\Panels\Panels\Ships\ActorShipPanel.cs" />
-     <Compile Include="Assets\Resources\Scripts\UI\Panels\Panels\Ships\FleetPanel.cs" />
-     <Compile Include="Assets\Resources\Scripts\UI\Panels\Panels\Stockpile\StockpilePanel.cs" />
-     <Compile Include="Assets\Resources\Scripts\UI\UIElement\UIElement.cs" />
-     <Compile Include="Assets\Resources\Scripts\UI\UIElement\UIElements\ButtonElement.cs" />
-     <Compile Include="Assets\Resources\Scripts\UI\UIElement\UIElements\PanelElement.cs" />
-     <Compile Include="Assets\Resources\Scripts\UI\UIElement\UIElements\TextBoxElement.cs" />
-     <Compile Include="Assets\Resources\Scripts\Utility\Parser.cs" />
-     <Compile Include="Assets\Resources\Scripts\Utility\Profiler.cs" />
-     <None Include="Assets\Resources\XMLDefs\ThingDefs.xml" />
-     <None Include="Assets\Resources\XMLDefs\LimbDefs.xml" />
-     <None Include="Assets\Resources\XMLDefs\CelestialBodyDefs.xml" />
-     <None Include="Assets\Resources\XMLDefs\JobDefs.xml" />
-     <None Include="Assets\Resources\Shaders\TransparentCutoutDiffuse.shader" />
- <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.PlaymodeTestsRunner">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/PlaymodeTestsRunner/UnityEngine.PlaymodeTestsRunner.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.HoloLens">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.VR">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
- </Reference>
- <Reference Include="Vectrosity">
- <HintPath>C:/Github/Cosmos/Assets/Plugins/Vectrosity.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\Resources\Scripts\Game.cs" />
+    <Compile Include="Assets\Resources\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\Math\LoadedDie.cs" />
+    <Compile Include="Assets\Resources\Scripts\Math\MathI.cs" />
+    <Compile Include="Assets\Resources\Scripts\Math\MinMax.cs" />
+    <Compile Include="Assets\Resources\Scripts\Root.cs" />
+    <Compile Include="Assets\Resources\Scripts\Utility\Debugger.cs" />
+    <Compile Include="Assets\Resources\Scripts\Utility\Parser.cs" />
+    <Compile Include="Assets\Resources\Scripts\Utility\Profiler\Profiler.cs" />
+    <None Include="Assets\Resources\XMLDefs\ThingDefs.xml" />
+    <None Include="Assets\Resources\XMLDefs\LimbDefs.xml" />
+    <None Include="Assets\Resources\XMLDefs\CelestialBodyDefs.xml" />
+    <None Include="Assets\Resources\XMLDefs\JobDefs.xml" />
+    <None Include="Assets\Resources\Shaders\TransparentCutoutDiffuse.shader" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>J:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>J:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PlaymodeTestsRunner">
+      <HintPath>J:/Unity/Editor/Data/UnityExtensions/Unity/PlaymodeTestsRunner/UnityEngine.PlaymodeTestsRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>J:/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HoloLens">
+      <HintPath>J:/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VR">
+      <HintPath>J:/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -169,5 +91,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>
