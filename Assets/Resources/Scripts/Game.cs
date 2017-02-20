@@ -1,29 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-namespace Cosmos
-{
+namespace Cosmos {
 
-	public class Game
-	{
+    public class Game {
         Profiler profiler = new Profiler("Main Game");
 
-		public Game ()
-		{
+        public Game() {
             profiler.Start();
-		}
-		public void Start ()
-		{
-		}
+        }
+        public void Start() {
+            for (int i = 0; i < 10; i++) {
+                EntityManager.AddEntity();
+            }
+        }
 
-		public void Update ()
-		{
-            profiler.Report();
-            profiler.Start();
-           
-		}
+        public void Update() {
+
+            //profiler.Start();
+            //Finder.GetTable("Entity").Print();
+            //profiler.Report();
+
+        }
         public void LateUpdate() {
             Debugger.Expose();
         }
-	}
+    }
 }

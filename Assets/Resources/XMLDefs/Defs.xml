@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <Entity>
+    <Default>
+      <Texture>Entity_Default.png</Texture>
+    </Default>
+  </Entity>
+</Defs>

@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 namespace Cosmos {
     public static class Debugger {
-       
-        public static List<string> logs = new List<string>();
+
+        private static List<string> logs = new List<string>();
         public static void Log(string str = "") {
             logs.Add(str);
         }

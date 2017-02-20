@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 namespace Cosmos {
- 
+
     public class Profiler {
         public string name;
         public float startTime;
@@ -13,21 +13,20 @@ namespace Cosmos {
         public Profiler(string Name) {
             name = Name;
         }
-        public void Start() {                  
+        public void Start() {
             Reset();
-            Debugger.Log("Starting Profiler: " + name + " --"); 
         }
         public void StartLap() {
             if (running) EndLap();
-            running = true;   
+            running = true;
             lapStartTime = Time.realtimeSinceStartup;
             lapCounter++;
         }
-        public void EndLap() {           
+        public void EndLap() {
             totalLapTime += Time.realtimeSinceStartup - lapStartTime;
             running = false;
         }
-       
+
         public void Reset() {
             EndLap();
             startTime = Time.realtimeSinceStartup;
@@ -39,7 +38,7 @@ namespace Cosmos {
         public void Report() {
             EndLap();
             float totalTime = Time.realtimeSinceStartup - startTime;
-            Debugger.Log("Total : " + (totalTime) + " | Loop time: "+(totalTime-totalLapTime) + " | Laps: " + lapCounter + " | Lap time: "+totalLapTime);
+            Debugger.Log("Profiler: " + name + "_  Total : " + (totalTime) + " | Loop time: " + (totalTime - totalLapTime) + " | Laps: " + lapCounter + " | Lap time: " + totalLapTime);
         }
 
     }
