@@ -36,12 +36,23 @@ namespace Cosmos {
         }
         public static void LoadTextures() {
             object[] LoadedTextures = LoadPath("Textures", typeof(Texture2D));
+            Table texTable = Finder.GetTable("Textures");
             foreach (object t in LoadedTextures) {
                 Texture2D tTex = (Texture2D)t;
-                string tempName = tTex.name;
-                tTex.name = tempName;
-                Debug.Log("Adding Texture: " + tempName);
-                Finder.GetTable("Textures").UpdateField(tTex.name, "Texture", tTex);
+                //Texture Name
+                string tempName = tTex.name;                
+                //Texture Category, defaults to "Entity"
+                int subIndex = tempName.IndexOf("_");
+                string texCat = "Entity";
+                if (subIndex > 0) {
+                    texCat = tempName.Substring(0, subIndex);
+                } else {
+                    tempName = "Entity_" + tempName;
+                }
+               // tTex.name = tempName;
+                //Adds texture               
+                Debugger.Log("Adding Texture: " + tempName);
+                texTable.UpdateField(tTex.name, texCat, tTex);
             }
         }
 

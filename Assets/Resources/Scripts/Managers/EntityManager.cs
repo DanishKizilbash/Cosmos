@@ -11,7 +11,8 @@ namespace Cosmos {
         public static void Init() {
         }
         public static void AddEntity() {
-            new Entity().Init() ;
+           Entity entity = new Entity();
+            entity.Init();
         }
     }
 }

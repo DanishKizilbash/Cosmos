@@ -13,7 +13,7 @@ namespace Cosmos {
             Table t = null;
             tables.TryGetValue(name, out t);
             //In case table doesn't exist
-            if (t == null) t = new Table();
+            if (t == null) t = new Table(name);
             if (!tables.ContainsKey(name)) tables.Add(name, t);
             //
             return t;

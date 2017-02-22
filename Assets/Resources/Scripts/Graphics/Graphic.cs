@@ -10,13 +10,14 @@ namespace Cosmos
 		public Vector2 scale;
 		public Graphic (string Name, Vector2 Scale= default(Vector2))
 		{
-			Debug.Log ("Making new graphic: " + Name);
+			Debugger.Log ("Making new graphic: " + Name);
 			name = Name;
 			if (Scale == default(Vector2)) {
 				Scale = new Vector2 (1, 1);
 			}
 			scale = Scale;
-			Init ();
+            Finder.GetTable("Graphics").UpdateField(name, new Field("Graphic", this));
+            Init ();
 			//Finder.graphicDatabase.Add (this);
 		}
 
@@ -26,10 +27,12 @@ namespace Cosmos
 		}
 		private void FindAtlas ()
 		{
-			spriteAtlas = (SpriteAtlas)Finder.GetTable("SpriteAtlas").GetValue (,name);
-			if (spriteAtlas != null) {
-				atlasVector = spriteAtlas.GetTextureVector (name);
-			}
+			spriteAtlas = (SpriteAtlas)Finder.GetTable("SpriteAtlas").GetValue (name,"SpriteAtlas");
+            if (spriteAtlas != null) {
+                atlasVector = spriteAtlas.GetTextureVector(name);
+            } else {
+                Debugger.Log("No SpriteAtlas found for: " + name);
+            }
 		}
 
 		public override string ToString ()

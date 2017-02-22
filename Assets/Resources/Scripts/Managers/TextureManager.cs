@@ -39,35 +39,39 @@ namespace Cosmos {
         private static void FindTextureCategories() {
             textureCategories = new List<string>();
             Table textureTable = Finder.GetTable("Textures");
-            textureCategories = textureTable.GetKeys();
+            textureCategories = textureTable.GetFieldKeys();
+            Debugger.Log("Found " + textureCategories.Count + " texture categories");
         }
         private static void PopulateDictionaries() {
-            Debug.Log("----Start Texture List Fill----");
+            Debugger.Log("----Start Texture List Fill----");
             foreach (string cat in textureCategories) {
                 List<Dictionary<string, Field>> records = Finder.GetTable("Textures").GetAllRecords(cat);
                 List<Texture2D> curTexList = new List<Texture2D>();
                 foreach (Dictionary<string, Field> rec in records) {
                     foreach (Field field in rec.Values) {
                         Texture2D tex = (Texture2D)field.value;
-                        tex.name = field.name;
+                        //tex.name = field.name;
                         curTexList.Add(tex);
                     }
                 }
                 //
                 textures.Add(cat, curTexList);
-                Debug.Log(textures[cat].Count + " " + cat + "s found");
+                Debugger.Log(textures[cat].Count + " " + cat + "s found");
                 int maxWidth = 1;
                 foreach (Texture2D tex in curTexList) {
                     if (tex.width > maxWidth) {
                         maxWidth = tex.width;
                     }
                 }
+                
                 SpriteAtlas curSpriteAtlas = new SpriteAtlas(maxWidth, cat + "Atlas");
                 curSpriteAtlas.AddTextureList(curTexList);
                 spriteAtlases.Add(cat, curSpriteAtlas);
                 curSpriteAtlas.Init();
+                
             }
-            Debug.Log("----End Texture List Fill----");
+            Finder.GetTable("SpriteAtlas").Print();
+            Debugger.Log("----End Texture List Fill----");
         }
 
     }

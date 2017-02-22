@@ -17,14 +17,15 @@ namespace Cosmos {
         public static void NewGame(float Seed, Vector3 MapSize) {
             Debug.Log("Loading New Game");
             curGameState = GameState.GameLoading;
-            InitManagers();
             Loader.Init();
+            InitManagers();            
             currentGame = new Game();
             currentGame.Start();
             curGameState = GameState.GameRunning;
         }
         private static void InitManagers() {
             Finder.Init();
+            TextureManager.Init(128);
             EntityManager.Init();
         }
         public static void Update() {

@@ -21,12 +21,28 @@ namespace Cosmos {
     #region Table
     public class Table {
         #region variables 
+        public string name;
         public int count;
         Dictionary<string, Dictionary<string, Field>> Records = new Dictionary<string, Dictionary<string, Field>>();
         #endregion
+        public Table(string Name) {
+            name = Name;
+        }
+
 
         public List<String> GetKeys() {
             return new List<String>(Records.Keys);
+        }
+        public List<String> GetFieldKeys() {
+            List<String> keys = new List<String>();
+            foreach (Dictionary<string, Field> rec in Records.Values) {
+                foreach (string col in rec.Keys) {
+                    if (!keys.Contains(col)) {
+                        keys.Add(col);
+                    }
+                }
+            }
+            return keys;
         }
         #region Records
 
@@ -41,6 +57,12 @@ namespace Cosmos {
             foreach (KeyValuePair<string, Dictionary<string, Field>> rec in Records) {
                 if (rec.Key == Category) {
                     recs.Add(rec.Value);
+                } else {
+                    foreach (KeyValuePair<string, Field> field in rec.Value) {
+                        if (field.Key == Category) {
+                            recs.Add(rec.Value);
+                        }
+                    }
                 }
             }
             return recs;
@@ -88,6 +110,7 @@ namespace Cosmos {
 
 
         public void Print() {
+            Debugger.Log("Printing table: " + name + " ---");
             List<Dictionary<string, Field>> recs = new List<Dictionary<string, Field>>();
             foreach (KeyValuePair<string, Dictionary<string, Field>> r in Records) {
                 recs.Add(r.Value);
@@ -97,6 +120,7 @@ namespace Cosmos {
                     Debugger.Log("Record: " + f.record + " | Field: " + f.name + " = " + f.value.ToString());
                 }
             }
+            Debugger.Log("--- Print end: " + name);
         }
     }
     #endregion

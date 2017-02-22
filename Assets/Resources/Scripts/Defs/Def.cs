@@ -21,7 +21,7 @@ namespace Cosmos {
             Table table = Finder.GetTable("Def");
             //
             foreach (KeyValuePair<string, object> d in data) {
-                table.UpdateField(name, d.Key, d.Value);
+                table.UpdateField(name, "Def", d.Value);
             }
             //
         }

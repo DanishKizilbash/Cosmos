@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 namespace Cosmos {
     public class Entity {
+        public Def def;
         //
         public Graphic mainGraphic;
         public MeshDisplay meshDisplay;
@@ -19,13 +20,24 @@ namespace Cosmos {
         //
         public bool visible = true;
         //
-        public string name="";
+        public string name = "";
         public bool selected = false;
         //
-        public virtual void Init() {
+        public virtual void Init(string defID = "Default") {
             if (name == "") {
                 name = "Entity" + Finder.GetTable("Entity").count.ToString();
             }
+            def = (Def)Finder.GetTable("Defs").GetValue("Entity", defID);
+            if (def == null) {
+                Debugger.Log("No def found for: " + defID);
+            } else {
+                string defString = def.GetAttribute("Texture").ToString();
+                mainGraphic = (Graphic)Finder.GetTable("Graphics").GetValue(defString, "Graphic");
+                if (mainGraphic == null) {
+                    mainGraphic = new Graphic(defString);
+                }
+            }
+
             UpdateTable();
         }
         public virtual void Update() {
