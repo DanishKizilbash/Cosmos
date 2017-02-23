@@ -8,8 +8,10 @@ namespace Cosmos
 		public SpriteAtlas spriteAtlas;
 		public Vector2 atlasVector;
 		public Vector2 scale;
-		public Graphic (string Name, Vector2 Scale= default(Vector2))
+        public string type;
+		public Graphic (string Name,string Type, Vector2 Scale= default(Vector2))
 		{
+            type = Type;
 			Debugger.Log ("Making new graphic: " + Name);
 			name = Name;
 			if (Scale == default(Vector2)) {
@@ -27,7 +29,7 @@ namespace Cosmos
 		}
 		private void FindAtlas ()
 		{
-			spriteAtlas = (SpriteAtlas)Finder.GetTable("SpriteAtlas").GetValue (name,"SpriteAtlas");
+			spriteAtlas = (SpriteAtlas)Finder.GetTable("SpriteAtlas").GetValue (type+"Atlas","SpriteAtlas");
             if (spriteAtlas != null) {
                 atlasVector = spriteAtlas.GetTextureVector(name);
             } else {

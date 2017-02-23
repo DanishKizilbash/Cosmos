@@ -34,7 +34,7 @@ namespace Cosmos {
                 string defString = def.GetAttribute("Texture").ToString();
                 mainGraphic = (Graphic)Finder.GetTable("Graphics").GetValue(defString, "Graphic");
                 if (mainGraphic == null) {
-                    mainGraphic = new Graphic(defString);
+                    mainGraphic = new Graphic(defString,def.type);
                 }
             }
 

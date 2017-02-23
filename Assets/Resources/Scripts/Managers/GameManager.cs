@@ -27,6 +27,7 @@ namespace Cosmos {
             Finder.Init();
             TextureManager.Init(128);
             EntityManager.Init();
+            DrawManager.Init();
         }
         public static void Update() {
             currentGame.Update();
