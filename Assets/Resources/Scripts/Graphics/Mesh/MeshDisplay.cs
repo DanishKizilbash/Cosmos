@@ -33,7 +33,7 @@ namespace Cosmos
 			textureVector = Vector2.zero;
 			meshSize = iMeshSize;
 			gameObject = new GameObject ();
-			gameObject.transform.parent = MeshManager.MeshesGameObject.transform;
+			gameObject.transform.parent = DrawManager.meshesGameObject.transform;
 			gameObject.name = name;
 			setVisibility (false);
 			meshFilter = gameObject.AddComponent<MeshFilter> ();
@@ -138,9 +138,7 @@ namespace Cosmos
 			if (entity != null) {
 				UpdateScale ();
 				gameObject.transform.position = MathI.RotateVector (entity.position, entity.position + entity.rotationPoint, entity.rotation);
-			} else {
-				MeshManager.CleanMeshDisplay (this);
-			}
+			} 
 		}
 		public void Rotate ()
 		{

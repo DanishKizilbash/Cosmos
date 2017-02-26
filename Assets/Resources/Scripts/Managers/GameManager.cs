@@ -26,11 +26,15 @@ namespace Cosmos {
         private static void InitManagers() {
             Finder.Init();
             TextureManager.Init(128);
-            EntityManager.Init();
             DrawManager.Init();
+            //
+            EntityManager.Init();
+            
         }
         public static void Update() {
             currentGame.Update();
+            DrawManager.Draw();
+
 
         }
         public static void LateUpdate() {

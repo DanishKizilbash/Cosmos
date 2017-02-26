@@ -9,7 +9,7 @@ namespace Cosmos {
         public Graphic mainGraphic;
         public MeshDisplay meshDisplay;
         public Vector3 position;
-        public Vector2 scale;
+        public Vector2 scale= Vector2.one;
         public float rotation;
         public Vector3 rotationPoint;
         public Rect rect {
@@ -37,10 +37,11 @@ namespace Cosmos {
                     mainGraphic = new Graphic(defString,def.type);
                 }
             }
-
+            DrawManager.UpdateEntity(this);
             UpdateTable();
         }
         public virtual void Update() {
+            DrawManager.UpdateEntity(this);
         }
         public virtual void Destroy() {
         }
