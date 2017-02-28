@@ -79,22 +79,25 @@
     <Compile Include="Assets\Resources\Scripts\Databases\Table.cs" />
     <Compile Include="Assets\Resources\Scripts\Defs\Def.cs" />
     <Compile Include="Assets\Resources\Scripts\Entity\Entity.cs" />
+    <Compile Include="Assets\Resources\Scripts\Entity\Thing\Thing.cs" />
     <Compile Include="Assets\Resources\Scripts\Game.cs" />
-    <Compile Include="Assets\Resources\Scripts\Graphics\Graphic.cs" />
-    <Compile Include="Assets\Resources\Scripts\Graphics\Mesh\MeshDisplay.cs" />
-    <Compile Include="Assets\Resources\Scripts\Graphics\Texture\SpriteAtlas.cs" />
     <Compile Include="Assets\Resources\Scripts\Loading\Loader.cs" />
     <Compile Include="Assets\Resources\Scripts\Managers\DrawManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Managers\EntityManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\Managers\PhysicsManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Managers\TextureManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\Managers\TickManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Math\LoadedDie.cs" />
     <Compile Include="Assets\Resources\Scripts\Math\MathI.cs" />
     <Compile Include="Assets\Resources\Scripts\Math\MinMax.cs" />
+    <Compile Include="Assets\Resources\Scripts\Physics\Force.cs" />
+    <Compile Include="Assets\Resources\Scripts\Physics\PhysicsObject.cs" />
     <Compile Include="Assets\Resources\Scripts\Root.cs" />
     <Compile Include="Assets\Resources\Scripts\Utility\Debugger.cs" />
     <Compile Include="Assets\Resources\Scripts\Utility\Parser.cs" />
     <Compile Include="Assets\Resources\Scripts\Utility\Profiler\Profiler.cs" />
+    <Compile Include="Assets\Resources\Scripts\Utility\Tickable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Shaders\TransparentCutoutDiffuse.shader" />

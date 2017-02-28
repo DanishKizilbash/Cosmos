@@ -5,25 +5,14 @@ namespace Cosmos {
     public static class TextureManager {
         public static Texture2D ClearTexture;
         private static Dictionary<string, List<Texture2D>> textures = new Dictionary<string, List<Texture2D>>();
-        private static Dictionary<string, SpriteAtlas> spriteAtlases = new Dictionary<string, SpriteAtlas>();
         public static List<string> textureCategories;
-        public static SpriteAtlas DefaultAtlas;
         private static int TileSize;
 
-
-
-        public static void Init(int atlasTileSize) {
-            TileSize = atlasTileSize;
+        public static void Init(int tileSize) {
+            TileSize = tileSize;
             FindTextureCategories();
             CreateTransparentTexture();
-            PopulateDictionaries();
-            MakeDefaultAtlas();
-        }
-        private static void MakeDefaultAtlas() {
-            DefaultAtlas = new SpriteAtlas(TileSize, "DefaultAtlas");
-            List<Texture2D> tempList = new List<Texture2D>();
-            tempList.Add(ClearTexture);
-            DefaultAtlas.AddTextureList(tempList);
+            //PopulateDictionaries();
         }
         private static void CreateTransparentTexture() {
             Texture2D transparentTex = new Texture2D((int)TileSize, (int)TileSize, TextureFormat.RGBA32, false);
@@ -64,13 +53,8 @@ namespace Cosmos {
                     }
                 }
                 
-                SpriteAtlas curSpriteAtlas = new SpriteAtlas(maxWidth, cat + "Atlas");
-                curSpriteAtlas.AddTextureList(curTexList);
-                spriteAtlases.Add(cat, curSpriteAtlas);
-                curSpriteAtlas.Init();
-                
             }
-            Finder.GetTable("SpriteAtlas").Print();
+            Debugger.Log("texturemanager does nothin");
             Debugger.Log("----End Texture List Fill----");
         }
 

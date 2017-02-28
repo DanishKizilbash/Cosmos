@@ -2,7 +2,7 @@
 <Defs>
   <Entity>
     <Default>
-      <Texture>Entity_Default.png</Texture>
+      <Texture>Entity_Default</Texture>
     </Default>
   </Entity>
 </Defs>

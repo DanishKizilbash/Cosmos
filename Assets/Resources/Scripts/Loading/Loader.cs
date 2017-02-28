@@ -52,7 +52,9 @@ namespace Cosmos {
                // tTex.name = tempName;
                 //Adds texture               
                 Debugger.Log("Adding Texture: " + tempName);
-                texTable.UpdateField(tTex.name, texCat, tTex);
+                Material tMat = new Material(Shader.Find("Sprites/Default"));
+                tMat.mainTexture = tTex;
+                texTable.UpdateField(tTex.name, "Material", tMat);
             }
         }
 

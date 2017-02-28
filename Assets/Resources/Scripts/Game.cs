@@ -20,6 +20,7 @@ namespace Cosmos {
             //profiler.Start();
             //Finder.GetTable("Entity").Print();
             //profiler.Report();
+            
 
         }
         public void LateUpdate() {
