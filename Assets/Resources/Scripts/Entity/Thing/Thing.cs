@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Cosmos
 {
-	public abstract class Thing:Entity
+	public class Thing:Entity
 	{
 		public PhysicsObject physicsObject;
 		public float constructionPointsRequired;
@@ -18,10 +18,10 @@ namespace Cosmos
 			}
 		}
 		//
-		public override void Init (string defID)
+		public override void Init (string defID = "Default")
 		{
-			base.Init (defID);
-			physicsObject = new PhysicsObject (this, new Vector3 (1, 1, 1));
+            physicsObject = new PhysicsObject(this, new Vector3(1, 1, 1));
+            base.Init (defID);			
 		}
 		public override void Destroy ()
 		{
@@ -37,7 +37,13 @@ namespace Cosmos
 		{
 			base.Tick ();
 		}
-		public virtual void SetConstructed (bool value)
+        public override void Update() {
+            physicsObject.ApplyForce(0.01f, 0.01f, 0f,Vector3.zero);
+            TickRequired = true;
+            base.Update();
+            DrawManager.RenderEntity(this);
+        }
+        public virtual void SetConstructed (bool value)
 		{
 			_isConstructed = value;
 		}

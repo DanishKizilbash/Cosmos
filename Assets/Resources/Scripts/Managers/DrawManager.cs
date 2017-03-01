@@ -12,7 +12,7 @@ namespace Cosmos {
         private static Vector2 cameraPos = new Vector2(0, 0);
         private static Vector2 targetCameraPos = new Vector2(0, 0);
         private static float cameraOrthoSize;
-        private static float targetSize = 1f;
+        private static float targetSize = 5f;
         private static float cameraEase = 0.2f;
         private static bool zoomToMouse = true;
         //GameObjects

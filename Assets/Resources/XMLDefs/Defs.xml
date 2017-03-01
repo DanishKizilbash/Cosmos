@@ -5,4 +5,9 @@
       <Texture>Entity_Default</Texture>
     </Default>
   </Entity>
+  <Thing>
+    <Default>
+      <Texture>Thing_Default</Texture>
+    </Default>
+  </Thing>
 </Defs>

@@ -40,19 +40,11 @@ namespace Cosmos {
             foreach (object t in LoadedTextures) {
                 Texture2D tTex = (Texture2D)t;
                 //Texture Name
-                string tempName = tTex.name;                
-                //Texture Category, defaults to "Entity"
-                int subIndex = tempName.IndexOf("_");
-                string texCat = "Entity";
-                if (subIndex > 0) {
-                    texCat = tempName.Substring(0, subIndex);
-                } else {
-                    tempName = "Entity_" + tempName;
-                }
-               // tTex.name = tempName;
+                string tempName = tTex.name;
                 //Adds texture               
                 Debugger.Log("Adding Texture: " + tempName);
                 Material tMat = new Material(Shader.Find("Sprites/Default"));
+                tMat.name = tempName;
                 tMat.mainTexture = tTex;
                 texTable.UpdateField(tTex.name, "Material", tMat);
             }

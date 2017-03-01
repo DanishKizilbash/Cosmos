@@ -11,7 +11,7 @@ namespace Cosmos {
         }
         public void Start() {
             for (int i = 0; i < 10; i++) {
-                EntityManager.AddEntity();
+                EntityManager.AddThing();
             }
         }
 

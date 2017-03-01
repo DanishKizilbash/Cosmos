@@ -68,6 +68,7 @@ namespace Cosmos
 		public void UpdatePosition ()
 		{
 			if (thing != null) {
+                
 				thing.position += deltaPos;
 				thing.rotation += deltaRot;
 				deltaPos = Vector3.zero;
